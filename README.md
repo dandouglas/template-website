@@ -14,14 +14,14 @@ Once you have installed node you will need to install the gulp cli globally.
  npm install gulp-cli -g
 ```
 
-I'd also suggest install jshint globally to lint your code.
+I'd also suggest installing jshint globally to lint your code.  I've included a basic jshint config file (.jshintrc) to get you started.  It simply stops the code editor nagging when using es6 syntax but you can add your own rules.  For further information visit "http://jshint.com/".
 ```
  npm install jshint -g
 ```
 
 ### Installing
 
-To get started simply clone this repository.
+Clone the repository.
 
 ```
 $ git clone https://github.com/dandouglas/template-website.git
