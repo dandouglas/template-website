@@ -21,6 +21,7 @@ const paths = {
     srcHTML: 'app/**/*.html',
     srcSass: 'app/sass/**/*.scss',
     srcJS: 'app/**/*.js',
+    srcImages: 'app/images/',
     tmp: 'tmp',
     tmpIndex: 'tmp/index.html',
     tmpCSS: 'tmp/styles/',
@@ -67,14 +68,13 @@ gulp.task('js', (cb) => {
     );
 });
 
-gulp.task('copy', gulp.series('html', 'sass', 'js'));
-
-// TODO: Implement
-gulp.task('clean:dist', function () {
-    return del([
-      'dist'
-    ]);
+// Copy images
+gulp.task('images', () => {
+    return gulp.src(`${paths.srcImages}**/*.{gif,jpg,png,svg}`)
+        .pipe(gulp.dest(`${destPath}/images`));
   });
+
+gulp.task('copy', gulp.series('html', 'sass', 'js'));
 
 // Copy all files to tmp/dist folder and inject file paths into the index.html file
 gulp.task('inject', gulp.series('copy', () => {
